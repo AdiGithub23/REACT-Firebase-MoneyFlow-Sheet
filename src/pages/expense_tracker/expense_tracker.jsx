@@ -153,7 +153,6 @@ const ExpenseTracker = () => {
             placeholder="Amount"
             value={transactionAmount} onChange={(e) => setTransactionAmount(e.target.value)}
           />
-          
           <div className="radio-group">
             <input
               type="radio"
@@ -172,8 +171,12 @@ const ExpenseTracker = () => {
             />
             <label htmlFor="income">Income</label>
           </div>
-          
-          <button type="submit">Add Transaction</button>
+          <button 
+            type="submit" 
+            className={transactionType === 'expense' ? 'expense-button' : 'income-button'}
+          >
+            Add Transaction
+          </button>
         </form>
         {
           profilePhoto && 
