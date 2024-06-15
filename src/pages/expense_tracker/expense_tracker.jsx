@@ -125,12 +125,14 @@ const ExpenseTracker = () => {
 
     // </>
         
+    <div className="background-animation">
     <div className="container">
       <div className="left-column">
         <h1>{name}'s Expense Tracker</h1>
         <div className="balance">
           <h3>Your Balance</h3>
-          {balance >= 0 ? <h2>${balance}</h2> : <h2>-${balance*(-1)}</h2>}
+          {balance >= 0 ? <h2 className='balance-green'>${balance}</h2> : <h2 className='balance-red'>-${balance*(-1)}</h2>}
+          {/* <h2 className={balance >= 0 ? 'balance-green' : 'balance-red'}>${Math.abs(balance)}</h2> */}
         </div>
         <div className="summary">
           <div className="income">
@@ -203,6 +205,7 @@ const ExpenseTracker = () => {
           </ul>
         </div>
       </div>
+    </div>
     </div>
   )
 }
